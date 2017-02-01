@@ -19,6 +19,7 @@ public class Queue<T> implements BagInterface<T> {
         bagItems = new ArrayDeque<>();
     }
 
+
     @Override
     public int getCurrentSize() {
         return bagItems.size();
@@ -67,4 +68,11 @@ public class Queue<T> implements BagInterface<T> {
             }
         return counter;
     }
+
+    @Override
+    public T[] toArray() {
+        return null;
+    }
+
+
 }

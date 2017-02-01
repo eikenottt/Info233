@@ -11,6 +11,8 @@ package no.uib.info233.v2017.rei008.oblig1;
 public class SimulationStep {
 
 
+
+
     public int getActivityDistributionBefore() {
         return 0;
     }

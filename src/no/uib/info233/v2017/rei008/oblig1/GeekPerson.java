@@ -10,9 +10,11 @@ package no.uib.info233.v2017.rei008.oblig1;
  */
 public class GeekPerson extends Person {
 
-    @Override
-    public String getPersonType() {
-        return "Geek";
+    private Queue<Person> geek = new Queue<>();
+
+    public GeekPerson() {
+        super.setPersonType("Geek");
+        super.setPersonBag(geek);
     }
 
     @Override

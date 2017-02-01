@@ -64,4 +64,6 @@ public interface BagInterface<T> {
      * specific type
      */
     int getFrequencyOf(T anEntry);
+
+    T[] toArray();
 }

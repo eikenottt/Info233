@@ -15,58 +15,61 @@ import static org.junit.Assert.*;
  */
 public class QueueTest {
 
-    private BagInterface<String> bag;
-
+    private BagInterface<Person> personBag;
+    private Person athletePerson1;
+    private Person athletePerson2;
+    private Person geekPerson1;
+    private Person chuckNorrisPerson1;
 
     @Before
     public void setUp() throws Exception {
-        bag = new Queue<>();
-        bag.add("Finn");
-        bag.add("Hei");
-        bag.add("Hallo");
-        bag.add("Hallo");
-        bag.add("Nei");
+        personBag = new Queue<>();
+        athletePerson1 = new AthletePerson();
+        athletePerson2 = new AthletePerson();
+        geekPerson1 = new GeekPerson();
+        chuckNorrisPerson1 = new ChuckNorrisPerson();
     }
 
     @Test
     public void getCurrentSize() throws Exception {
-        assertEquals(5,bag.getCurrentSize());
+        assertEquals(5, personBag.getCurrentSize());
     }
 
     @Test
     public void isFull() throws Exception {
-        assertFalse(bag.isFull());
+        assertFalse(personBag.isFull());
     }
 
     @Test
     public void isEmpty() throws Exception {
-        assertFalse(bag.isEmpty());
+        assertFalse(personBag.isEmpty());
     }
 
     @Test
     public void add() throws Exception {
-        assertTrue(bag.add("Jau"));
+        Person athletePerson3 = new AthletePerson();
+        assertTrue(personBag.add(athletePerson3));
     }
 
     @Test
     public void remove() throws Exception {
-        assertEquals("Finn",bag.remove());
+        assertEquals(chuckNorrisPerson1, personBag.remove());
     }
 
     @Test
     public void removeSpesificItem() throws Exception {
-        assertTrue(bag.remove("Hei"));
+        assertTrue(personBag.remove(athletePerson1));
     }
 
     @Test
     public void clear() throws Exception {
-        bag.clear();
-        assertEquals(0, bag.getCurrentSize());
+        personBag.clear();
+        assertEquals(0, personBag.getCurrentSize());
     }
 
     @Test
     public void getFrequencyOf() {
-        assertEquals(1, bag.getFrequencyOf("Hei"));
+
     }
 
 }

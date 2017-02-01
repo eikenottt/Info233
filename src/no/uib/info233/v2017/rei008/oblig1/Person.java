@@ -10,11 +10,28 @@ package no.uib.info233.v2017.rei008.oblig1;
  */
 public abstract class Person {
 
-    public abstract String getPersonType();
+    private String personType;
 
-    public String chooseActivity(BagInterface<String> possibleActivities) {
+    private Queue<Person> PersonBag;
 
-        return "";
-
+    public void setPersonBag(Queue<Person> personBag) {
+        PersonBag = personBag;
     }
+
+    public Queue<Person> getPersonBag() {
+        return PersonBag;
+    }
+
+    public void setPersonType(String personType) {
+        this.personType = personType;
+    }
+
+    public String getPersonType() {
+        return personType;
+    }
+
+    public String chooseActivity(BagInterface<String> possibleActivities){
+        return null;
+    }
+
 }
